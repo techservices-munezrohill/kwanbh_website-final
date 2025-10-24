@@ -1,0 +1,55 @@
+backend:
+  name: github
+  repo: "brianmugunga/kwanbh-website" # Your specific GitHub repository
+  branch: "main"                      # Your main branch name
+
+# --- Media and File Uploads ---
+# This tells Decap CMS where to save files you upload (like images).
+# I recommend creating this folder in your repo: 'assets/uploads'
+media_folder: "assets/uploads" 
+# This tells the website where to look for the images in the final published site.
+public_folder: "/assets/uploads" 
+
+# --- Content Collections ---
+collections:
+  # 1. Main Pages Collection (for index.html, about.html, etc.)
+  # This lets you edit the content of individual files.
+  - name: "pages"
+    label: "Website Pages"
+    files:
+      # Settings for your Homepage
+      - label: "Homepage"
+        name: "index"
+        file: "index.html" # Path to your main HTML file in the root
+        fields:
+          # IMPORTANT: These fields need to match the data you want to edit.
+          # Since your HTML is structured, you'll need to figure out which text
+          # blocks or images you want the CMS to control and adjust these.
+          # Start with a few key editable fields:
+          - {label: "SEO Title", name: "title", widget: "string", default: "Kwanbh Home Page"}
+          - {label: "Main Headline", name: "headline_text", widget: "string"}
+          - {label: "Body Content", name: "body", widget: "markdown"}
+          - {label: "Intro Image", name: "image", widget: "image", required: false}
+
+      # Settings for your About Page
+      - label: "About Us"
+        name: "about"
+        file: "about.html" # Assuming you have an about.html in the root
+        fields:
+          - {label: "Page Title", name: "title", widget: "string", default: "About Kwanbh"}
+          - {label: "Section 1", name: "section_one_text", widget: "markdown"}
+          # Add more fields as needed for your about.html structure
+
+  # 2. Blog Posts (If you plan to add a blog or news section)
+  # This lets you create multiple new files (posts) easily.
+  - name: "posts"
+    label: "Blog Posts"
+    # CHANGE THIS to the actual folder where your posts/articles will live (e.g., _posts)
+    folder: "blog" 
+    create: true
+    slug: "{{slug}}" # Creates a filename from the title
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Tags", name: "tags", widget: "list", required: false}
