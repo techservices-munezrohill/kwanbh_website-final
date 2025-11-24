@@ -1,0 +1,43 @@
+site:
+  name: Kwan Website
+
+collections:
+  - name: pages
+    label: Pages
+    folder: src/content/pages
+    extension: md
+    format: frontmatter
+    fields:
+      - name: title
+        label: Title
+        type: text
+      - name: slug
+        label: Slug
+        type: text
+      - name: source
+        label: Source
+        type: select
+        options: [cms, google-doc-embed, google-doc-fetch]
+      - name: googleDocId
+        label: Google Doc ID
+        type: text
+        required: false
+      - name: body
+        label: Body
+        type: markdown
+
+  - name: publications
+    label: Publications
+    folder: src/content/publications
+    extension: md
+    format: frontmatter
+    fields:
+      - name: title
+        label: Title
+        type: text
+      - name: slug
+        label: Slug
+        type: text
+      - name: body
+        label: Body
+        type: markdown
