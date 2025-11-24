@@ -9,8 +9,22 @@ export type PageContent = {
   body?: string;
 };
 
+export type Publication = {
+  title: string;
+  slug: string;
+  authors?: string;
+  journal?: string;
+  year?: string;
+  abstract?: string;
+  pdfUrl?: string;
+  fullUrl?: string;
+  featured?: boolean;
+  cover?: string;
+};
+
 // Vite will include these files in the bundle and expose raw content
 const pageFiles = import.meta.glob("../content/pages/*.md", { as: "raw", eager: true });
+const publicationFiles = import.meta.glob("../content/publications/*.md", { as: "raw", eager: true });
 
 export async function loadPage(slug: string): Promise<PageContent | null> {
   const key = Object.keys(pageFiles).find((k) => k.endsWith(`${slug}.md`));
@@ -23,4 +37,22 @@ export async function loadPage(slug: string): Promise<PageContent | null> {
     ...data,
     body: content,
   };
+}
+
+export async function loadPublications(): Promise<Publication[]> {
+  const entries: Publication[] = [];
+  for (const key of Object.keys(publicationFiles)) {
+    const raw = publicationFiles[key] as string;
+    const parsed = matter(raw);
+    const data = parsed.data as Publication;
+    const content = parsed.content?.trim();
+    entries.push({ ...data, abstract: content || data.abstract });
+  }
+  return entries
+    .filter((p) => p.title && p.slug)
+    .sort((a, b) => {
+      const ay = parseInt(a.year || "0", 10);
+      const by = parseInt(b.year || "0", 10);
+      return by - ay;
+    });
 }
