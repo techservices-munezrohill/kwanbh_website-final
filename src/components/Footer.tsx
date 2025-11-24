@@ -85,7 +85,7 @@ const Footer = () => {
 
         <div className="border-t border-stone-700 mt-8 pt-6 text-center">
           <p className="text-stone-300">
-            © 2025 Dr. Kwan‑Lamar Blount‑Hill. All rights reserved. Advancing justice through scholarship and advocacy.
+            © 2025 Dr. Kwan‑Lamar Blount‑Hill. All rights reserved. Powered by Munezero Hill.
           </p>
         </div>
       </div>

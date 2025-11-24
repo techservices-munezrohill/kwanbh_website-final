@@ -264,4 +264,150 @@ const CV = () => {
       </section>
 
       {/* Research Interests Section */}
-// ... (rest of the file is unchanged)
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h2 className="text-3xl font-bold text-stone-900 mb-6 border-b-2 border-amber-600 pb-2 flex items-center space-x-2">
+          <BookOpen className="h-7 w-7 text-amber-700" />
+          Research Interests
+        </h2>
+        <div className="text-lg text-stone-700 leading-relaxed">
+          <p className="mb-2">Police–community relations, social psychological processes and legal compliance (e.g., legitimacy, obligation to obey), environmental crime, conservation criminology, criminological theory, research methodology.</p>
+        </div>
+      </section>
+
+      {/* Key Sections with Toggle */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 space-y-4">
+        
+        {/* Education Section */}
+        <div>
+          <SectionHeader title="Education" icon={GraduationCap} sectionKey="education" />
+          {expandedSections.education && (
+            <div className="p-6 bg-stone-50 border border-t-0 rounded-b-xl space-y-6">
+              {education.map((item, index) => (
+                <div key={index} className="border-l-4 border-amber-600 pl-4">
+                  <h3 className="text-xl font-bold text-stone-800">{item.degree}</h3>
+                  <p className="text-stone-600 font-semibold">{item.institution}</p>
+                  <div className="flex items-center space-x-4 text-sm text-stone-500 mt-1">
+                    <span className="flex items-center space-x-1"><Calendar className="h-4 w-4" /> <span>{item.year}</span></span>
+                    <span className="flex items-center space-x-1"><MapPin className="h-4 w-4" /> <span>{item.location}</span></span>
+                  </div>
+                  {item.details && <p className="mt-2 text-stone-700 italic">Dissertation: {item.details}</p>}
+                  {item.honors && <p className="mt-1 text-amber-700 font-medium">Honors: {item.honors}</p>}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Current Positions Section */}
+        <div>
+          <SectionHeader title="Current Positions & Affiliations" icon={Building} sectionKey="positions" />
+          {expandedSections.positions && (
+            <div className="p-6 bg-stone-50 border border-t-0 rounded-b-xl space-y-6">
+              <h3 className="text-xl font-bold text-stone-900 mb-3 border-b pb-2">Academic & Program Appointments</h3>
+              {currentPositions.map((item, index) => (
+                <div key={index} className={`border-l-4 pl-4 ${item.type === 'primary' ? 'border-amber-600' : 'border-stone-400'}`}>
+                  <h4 className="text-lg font-bold text-stone-800">{item.title}</h4>
+                  <p className="text-stone-600">{item.institution}</p>
+                  <div className="flex items-center space-x-4 text-sm text-stone-500 mt-1">
+                    <span className="flex items-center space-x-1"><Calendar className="h-4 w-4" /> <span>{item.period}</span></span>
+                    <span className="flex items-center space-x-1"><MapPin className="h-4 w-4" /> {item.location}</span>
+                  </div>
+                </div>
+              ))}
+            
+              <h3 className="text-xl font-bold text-stone-900 mb-3 border-b pt-4 pb-2">Key Affiliations</h3>
+              <ul className="list-disc pl-5 space-y-1 text-stone-700">
+                {keyAffiliations.map((aff, index) => (
+                  <li key={index} className="text-base">{aff}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+
+        {/* Awards Section */}
+        <div>
+          <SectionHeader title="Selected Awards & Honors" icon={Award} sectionKey="awards" />
+          {expandedSections.awards && (
+            <div className="p-6 bg-stone-50 border border-t-0 rounded-b-xl space-y-6">
+              {recentAwards.map((item, index) => (
+                <div key={index} className="border-l-4 border-amber-600 pl-4">
+                  <div className="flex justify-between items-start">
+                    <h4 className="text-lg font-bold text-stone-800">{item.title}</h4>
+                    <span className="text-sm text-stone-500 flex items-center space-x-1"><Star className="h-4 w-4 text-yellow-500 fill-yellow-500" /> {item.year}</span>
+                  </div>
+                  <p className="text-stone-600 italic">{item.organization}</p>
+                  <p className="text-stone-700 mt-1 text-sm">{item.description}</p>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Grants Section */}
+        <div>
+          <SectionHeader title="Major Grants & Funding" icon={DollarSign} sectionKey="grants" subtitle="Click to expand" />
+          {expandedSections.grants && (
+            <div className="p-6 bg-stone-50 border border-t-0 rounded-b-xl space-y-6">
+              {majorGrants.map((item, index) => (
+                <div key={index} className="border-l-4 border-green-600 pl-4">
+                  <h4 className="text-lg font-bold text-stone-800">{item.title}</h4>
+                  <p className="text-stone-600">{item.agency}</p>
+                  <div className="flex justify-between text-sm text-stone-500 mt-1">
+                    <span>**Amount:** <span className="text-green-700 font-semibold">{item.amount}</span></span>
+                    <span>**Role:** {item.role}</span>
+                    <span>**Period:** {item.period}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Publications Section */}
+        <div>
+          <SectionHeader title="Publication Highlights" icon={BookOpen} sectionKey="publications" subtitle="Click to expand" />
+          {expandedSections.publications && (
+            <div className="p-6 bg-stone-50 border border-t-0 rounded-b-xl space-y-6">
+              {publicationHighlights.map((item, index) => (
+                <div key={index} className="border-l-4 border-blue-600 pl-4">
+                  <h4 className="text-lg font-bold text-stone-800 italic">{item.title}</h4>
+                  <div className="flex justify-between items-center text-stone-600 text-sm mt-1">
+                    <span>{item.journal}, {item.year}</span>
+                    {item.impact && <span className="text-blue-700 font-semibold">{item.impact}</span>}
+                  </div>
+                  {item.coauthor && <p className="text-xs text-stone-500 mt-1">Co-authors: {item.coauthor}</p>}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Professional Memberships Section */}
+        <div>
+          <SectionHeader title="Professional Memberships" icon={Users} sectionKey="memberships" subtitle="Click to expand" />
+          {expandedSections.memberships && (
+            <div className="p-6 bg-stone-50 border border-t-0 rounded-b-xl">
+              <ul className="list-disc pl-5 space-y-1 text-stone-700 columns-2 sm:columns-3">
+                {professionalOrgs.map((org, index) => (
+                  <li key={index} className="text-base">{org}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+
+      </div>
+
+      {/* Footer or return to Home */}
+      <footer className="bg-stone-800 text-white text-center py-6 mt-12">
+        <Link to="/" className="text-amber-400 hover:text-amber-300 font-semibold flex items-center justify-center space-x-2">
+          <Briefcase className="h-5 w-5" />
+          <span>Return to Portfolio Home</span>
+        </Link>
+      </footer>
+    </div>
+  );
+};
+
+export default CV;
