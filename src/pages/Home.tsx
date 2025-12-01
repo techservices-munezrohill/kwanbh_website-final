@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, BookOpen, Scale, Heart } from 'lucide-react';
 import Photo6 from '../assets/Photo-6.jpg';
+import { loadHome, HomeContent } from '../utils/content';
+import { PortableText } from '@portabletext/react';
 
 const Home = () => {
   const [displayedText, setDisplayedText] = useState('');
@@ -12,35 +14,44 @@ const Home = () => {
   const [showImage, setShowImage] = useState(false);
   const [statsAnimated, setStatsAnimated] = useState(false);
   const [statValues, setStatValues] = useState([0, 0, 0, 0]);
-  
-  const fullText = 'Dr. Kwan-Lamar Blount-Hill';
+  const [homeContent, setHomeContent] = useState<HomeContent | null>(null);
+  const [heroText, setHeroText] = useState('Dr. Kwan-Lamar Blount-Hill');
   
   useEffect(() => {
     let currentIndex = 0;
     const typingSpeed = 100; // milliseconds per character
-    
+    const text = heroText;
     const typeWriter = () => {
-      if (currentIndex < fullText.length) {
-        setDisplayedText(fullText.slice(0, currentIndex + 1));
+      if (currentIndex < text.length) {
+        setDisplayedText(text.slice(0, currentIndex + 1));
         currentIndex++;
         setTimeout(typeWriter, typingSpeed);
       } else {
-        // Hide cursor after typing completes
         setTimeout(() => setShowCursor(false), 500);
-        // After typing is complete, show other elements with staggered timing
         setTimeout(() => setShowSubtitle(true), 300);
         setTimeout(() => setShowDescription(true), 800);
         setTimeout(() => setShowButtons(true), 1300);
         setTimeout(() => setShowImage(true), 400);
       }
     };
-    
-    // Start typing after a brief delay
     const startDelay = setTimeout(typeWriter, 500);
-    
     return () => clearTimeout(startDelay);
-  }, []);
+  }, [heroText]);
 
+  useEffect(() => {
+    (async () => {
+      try {
+        const data = await loadHome();
+        if (data) {
+          setHomeContent(data);
+          if (data.title) setHeroText(data.title);
+        }
+      } catch (e) {
+        // silently ignore to keep fallback UI
+      }
+    })();
+  }, []);
+  
   const features = [
     {
       icon: <BookOpen className="h-8 w-8" />,
@@ -135,7 +146,6 @@ const Home = () => {
                   {showCursor && <span className="animate-pulse text-amber-400">|</span>}
                 </span>
               </h1>
-              
               {/* Animated Subtitle */}
               <div className={`transition-all duration-700 ease-out transform ${
                 showSubtitle 
@@ -143,10 +153,9 @@ const Home = () => {
                   : 'opacity-0 translate-y-4'
               }`}>
                 <p className="text-xl sm:text-2xl md:text-3xl text-amber-200 font-light">
-                  Scholar. Attorney. Advocate.
+                  {homeContent?.subtitle || 'Scholar. Attorney. Advocate.'}
                 </p>
               </div>
-              
               {/* Animated Description */}
               <div className={`transition-all duration-700 ease-out transform ${
                 showDescription 
@@ -154,11 +163,9 @@ const Home = () => {
                   : 'opacity-0 translate-y-4'
               }`}>
                 <p className="text-lg md:text-xl text-stone-300 leading-relaxed max-w-2xl">
-                  Criminologist, professor, researcher, and advocate for social and ecological justice. 
-                  Advancing transformative scholarship that centers Black, queer, and marginalized voices.
+                  {homeContent?.description || 'Criminologist, professor, researcher, and advocate for social and ecological justice. Advancing transformative scholarship that centers Black, queer, and marginalized voices.'}
                 </p>
               </div>
-              
               {/* Animated Buttons */}
               <div className={`transition-all duration-700 ease-out transform ${
                 showButtons 
@@ -182,7 +189,6 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            
             {/* Animated Image */}
             <div className={`flex justify-center items-start order-1 lg:order-2 -mt-4 lg:-mt-6 transition-all duration-1000 ease-out transform ${
               showImage 
@@ -191,20 +197,18 @@ const Home = () => {
             }`}>
               <div className="relative w-full max-w-md lg:max-w-lg xl:max-w-xl aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-shadow duration-300">
                 <img
-                  src={Photo6}
+                  src={homeContent?.heroImage || Photo6}
                   alt="Dr. Kwan-Lamar Blount-Hill professional"
                   className="w-full h-full object-cover object-center transition-transform duration-300 hover:scale-105"
                   loading="eager"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
-                {/* Subtle border glow effect */}
                 <div className="absolute inset-0 rounded-2xl ring-1 ring-white/20"></div>
               </div>
             </div>
           </div>
         </div>
       </section>
-
       {/* Animated Stats Section */}
       <section id="stats-section" className="py-16 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -218,24 +222,17 @@ const Home = () => {
                     : 'opacity-0 translate-y-8 scale-95'
                 }`}
                 style={{ 
-                  transitionDelay: `${index * 150}ms` // Staggered animation
+                  transitionDelay: `${index * 150}ms` 
                 }}
               >
                 <div className="relative group">
-                  {/* Animated background glow */}
                   <div className="absolute inset-0 bg-gradient-to-r from-amber-200 to-yellow-200 rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 transform scale-110"></div>
-                  
-                  {/* Counter number */}
                   <div className="relative text-4xl md:text-5xl font-bold text-amber-700 mb-3 py-4">
                     {statsAnimated ? formatStatValue(statValues[index], stat) : '0'}
                   </div>
-                  
-                  {/* Label */}
                   <div className="text-stone-600 font-semibold text-sm md:text-base">
                     {stat.label}
                   </div>
-                  
-                  {/* Decorative line */}
                   <div className="mt-3 mx-auto w-12 h-1 bg-gradient-to-r from-amber-500 to-yellow-500 rounded-full opacity-60"></div>
                 </div>
               </div>
@@ -243,7 +240,18 @@ const Home = () => {
           </div>
         </div>
       </section>
-
+      {/* CMS Body Section */}
+      {homeContent?.body && (
+        <section className="py-12 bg-stone-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="bg-white rounded-xl shadow-lg p-8">
+              <div className="prose prose-stone max-w-none">
+                <PortableText value={homeContent.body} />
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
       {/* Features Section */}
       <section className="py-20 bg-stone-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -255,7 +263,6 @@ const Home = () => {
               Bridging academic scholarship, legal advocacy, and social justice to create meaningful change
             </p>
           </div>
-          
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <div key={index} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -273,7 +280,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
       {/* Recent Work Preview */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
