@@ -9,18 +9,20 @@ const dataset = process.env.SANITY_STUDIO_DATASET || process.env.VITE_SANITY_DAT
 
 // Resolve preview URL for documents
 const resolvePreviewUrl = (doc: any) => {
-  const base = process.env.SANITY_STUDIO_PREVIEW_URL || 'http://localhost:5173/';
-  const basePath = process.env.SANITY_STUDIO_PREVIEW_BASEPATH || '';
-  const normalize = (url: string) => (url.endsWith('/') ? url : url + '/');
-  const root = normalize(base) + (basePath ? basePath.replace(/^\//, '').replace(/\/$/, '') + '/' : '');
-
-  if (doc?._type === 'homePage') return root; // homepage
-  if (doc?._type === 'page') {
-    const slug = doc?.slug?.current || '';
-    return slug ? root + slug : root;
-  }
-  return root;
-};
+-  const base = process.env.SANITY_STUDIO_PREVIEW_URL || 'http://localhost:5173/';
++  // Use explicit env if provided; otherwise fallback to production site
++  const base = process.env.SANITY_STUDIO_PREVIEW_URL || 'https://brianmugunga.github.io/kwanbh-website/';
+   const basePath = process.env.SANITY_STUDIO_PREVIEW_BASEPATH || '';
+   const normalize = (url: string) => (url.endsWith('/') ? url : url + '/');
+   const root = normalize(base) + (basePath ? basePath.replace(/^\//, '').replace(/\/$/, '') + '/' : '');
+ 
+   if (doc?._type === 'homePage') return root; // homepage
+   if (doc?._type === 'page') {
+     const slug = doc?.slug?.current || '';
+     return slug ? root + slug : root;
+   }
+   return root;
+ };
 
 // Add a split view with an iframe preview for supported types
 const defaultDocumentNode = (S: any, { schemaType }: { schemaType: string }) => {
