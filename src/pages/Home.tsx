@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, BookOpen, Scale, Heart } from 'lucide-react';
 import Photo6 from '../assets/Photo-6.jpg';
-import { loadHome, HomeContent } from '../utils/content';
+import { loadHome, HomeContent, subscribeHome } from '../utils/content';
 import { PortableText } from '@portabletext/react';
 
 const Home = () => {
@@ -50,6 +50,13 @@ const Home = () => {
         // silently ignore to keep fallback UI
       }
     })();
+    const unsubscribe = subscribeHome((latest) => {
+      if (latest) {
+        setHomeContent(latest);
+        if (latest.title) setHeroText(latest.title);
+      }
+    });
+    return () => unsubscribe();
   }, []);
   
   const features = [

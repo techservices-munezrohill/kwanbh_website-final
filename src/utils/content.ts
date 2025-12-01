@@ -77,6 +77,30 @@ export async function loadHome(): Promise<HomeContent | null> {
   };
 }
 
+export function subscribeHome(onUpdate: (content: HomeContent | null) => void): () => void {
+  if (!sanity) {
+    return () => {};
+  }
+  const query = groq`coalesce(
+    *[_type == "homePage"][0],
+    *[_type == "page" && slug.current == "home"][0]
+  )`;
+  const sub = sanity.listen(query, {}, { visibility: 'sync' }).subscribe({
+    next: async () => {
+      try {
+        const latest = await loadHome();
+        onUpdate(latest);
+      } catch {
+        // ignore
+      }
+    },
+    error: () => {
+      // ignore
+    },
+  });
+  return () => sub.unsubscribe();
+}
+
 export async function loadPublications(): Promise<Publication[]> {
   // Prefer Sanity when configured, otherwise fall back to local markdown entries
   if (sanity) {
