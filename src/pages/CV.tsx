@@ -239,7 +239,7 @@ const CV = () => {
             
             {/* 1. The 'View CV Online' button (Uses the original Google Docs preview link) */}
             <a
-              href="https://docs.google.com/document/d/1XmMKYA_BBs6X2jyoE5ftjrH_mudiI-n67T2Wp7W0vzY/preview"
+              href="https://docs.google.com/document/d/1MbFcdQGCV3MngNR5t6NCFMYhYOQtHUNG/preview"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-amber-700 hover:bg-amber-800 text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-200 inline-flex items-center space-x-2"
@@ -250,7 +250,7 @@ const CV = () => {
 
             {/* 2. The 'Download CV (PDF)' button (Uses the special Google Docs PDF export link) */}
             <a
-              href="https://docs.google.com/document/d/1XmMKYA_BBs6X2jyoE5ftjrH_mudiI-n67T2Wp7W0vzY/export?format=pdf"
+              href="https://docs.google.com/document/d/1MbFcdQGCV3MngNR5t6NCFMYhYOQtHUNG/export?format=pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-stone-50 text-stone-900 hover:bg-stone-200 px-8 py-4 rounded-lg font-semibold transition-colors duration-200 inline-flex items-center space-x-2 border border-stone-300"
