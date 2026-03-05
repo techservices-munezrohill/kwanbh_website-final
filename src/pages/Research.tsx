@@ -1,12 +1,31 @@
 import React, { useState } from 'react';
 import { BookOpen, Users, Brain, Scale, Heart, Globe, ExternalLink, Calendar, MapPin, Award, Filter } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import researchData from '../../content/research.json';
 
 const Research = () => {
   const [activeTab, setActiveTab] = useState('research');
   const [projectFilter, setProjectFilter] = useState('all');
 
-  const researchAreas = [
+  // Data loaded from content/research.json (edit via TinaCMS admin)
+  const researchAreas = researchData.researchAreas.map((area) => ({
+    ...area,
+    icon: (
+      {
+        'Social Identity Theory of Shared Narrative': <Brain className="h-12 w-12" />,
+        'Affective Architecture': <Heart className="h-12 w-12" />,
+        'Decolonizing Criminology': <Users className="h-12 w-12" />,
+        'LGBTQ+ Justice': <Scale className="h-12 w-12" />,
+        'Ecological Justice': <Globe className="h-12 w-12" />,
+      } as Record<string, JSX.Element>
+    )[area.title] || <BookOpen className="h-12 w-12" />,
+  }));
+  const currentProjects = researchData.currentProjects;
+  const methodologies: string[] = researchData.methodologies;
+  const appliedProjects = researchData.appliedProjects;
+
+  // REMOVED hardcoded arrays — data now lives in content/research.json
+  const _researchAreas_removed = [
     {
       icon: <Brain className="h-12 w-12" />,
       title: 'Social Identity Theory of Shared Narrative',

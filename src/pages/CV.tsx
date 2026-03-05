@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Download, ExternalLink, Calendar, MapPin, Award, BookOpen, GraduationCap, Users, Building, Star, ChevronDown, ChevronUp, FileText, TrendingUp, DollarSign, Briefcase } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import cvData from '../../content/cv.json';
 
 const CV = () => {
   const [expandedSections, setExpandedSections] = useState<{[key: string]: boolean}>({
@@ -17,8 +18,22 @@ const CV = () => {
     setExpandedSections(prev => ({ ...prev, [section]: !prev[section] }));
   };
 
-  // Education data from CV
-  const education = [
+  // Data loaded from content/cv.json (edit via TinaCMS admin)
+  const education = cvData.education as Array<{
+    degree: string; institution: string; year: string; location: string;
+    details?: string; committee?: string; honors?: string;
+  }>;
+  const currentPositions = cvData.currentPositions as Array<{
+    title: string; institution: string; period: string; location: string; type: string;
+  }>;
+  const keyAffiliations: string[] = cvData.keyAffiliations;
+  const recentAwards = cvData.recentAwards;
+  const majorGrants = cvData.majorGrants;
+  const publicationHighlights = cvData.publicationHighlights;
+  const professionalOrgs: string[] = cvData.professionalOrgs;
+
+  // REMOVED hardcoded arrays — data now lives in content/cv.json
+  const _education_removed = [
     {
       degree: 'Doctor of Philosophy in Criminal Justice',
       institution: 'John Jay College of Criminal Justice/Graduate Center, City University of New York',

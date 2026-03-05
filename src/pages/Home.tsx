@@ -4,6 +4,7 @@ import { ArrowRight, BookOpen, Scale, Heart } from 'lucide-react';
 import Photo6 from '../assets/Photo-6.jpg';
 import { loadHome, HomeContent, subscribeHome } from '../utils/content';
 import { PortableText } from '@portabletext/react';
+import homeData from '../../content/home.json';
 
 const Home = () => {
   const [displayedText, setDisplayedText] = useState('');
@@ -15,7 +16,7 @@ const Home = () => {
   const [statsAnimated, setStatsAnimated] = useState(false);
   const [statValues, setStatValues] = useState([0, 0, 0, 0]);
   const [homeContent, setHomeContent] = useState<HomeContent | null>(null);
-  const [heroText, setHeroText] = useState('Dr. Kwan-Lamar Blount-Hill');
+  const [heroText, setHeroText] = useState(homeData.heroTitle || 'Dr. Kwan-Lamar Blount-Hill');
   
   useEffect(() => {
     let currentIndex = 0;
@@ -59,30 +60,14 @@ const Home = () => {
     return () => unsubscribe();
   }, []);
   
-  const features = [
-    {
-      icon: <BookOpen className="h-8 w-8" />,
-      title: 'Scholar',
-      description: 'Advancing criminological theory through innovative research and critical analysis.'
-    },
-    {
-      icon: <Scale className="h-8 w-8" />,
-      title: 'Attorney',
-      description: 'Advocating for justice through legal expertise and policy reform.'
-    },
-    {
-      icon: <Heart className="h-8 w-8" />,
-      title: 'Advocate',
-      description: 'Championing social and ecological justice for marginalized communities.'
-    }
-  ];
-
-  const stats = [
-    { number: '8+', label: 'Years Experience', targetValue: 8, prefix: '', suffix: '+' },
-    { number: '33+', label: 'Publications', targetValue: 33, prefix: '', suffix: '+' },
-    { number: '4+', label: 'Universities', targetValue: 4, prefix: '', suffix: '+' },
-    { number: '$1.2M+', label: 'Research Funding', targetValue: 1.2, prefix: '$', suffix: 'M+' }
-  ];
+  // Data loaded from content/home.json (edit via TinaCMS admin)
+  const featureIcons = [<BookOpen className="h-8 w-8" />, <Scale className="h-8 w-8" />, <Heart className="h-8 w-8" />];
+  const features = homeData.features.map((f, i) => ({
+    icon: featureIcons[i] || <BookOpen className="h-8 w-8" />,
+    title: f.title,
+    description: f.description,
+  }));
+  const stats = homeData.stats;
 
   // Scroll observer for stats animation
   useEffect(() => {

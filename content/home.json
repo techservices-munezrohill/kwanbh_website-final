@@ -1,0 +1,29 @@
+{
+  "heroTitle": "Dr. Kwan-Lamar Blount-Hill",
+  "subtitle": "Scholar. Attorney. Advocate.",
+  "description": "Criminologist, professor, researcher, and advocate for social and ecological justice. Advancing transformative scholarship that centers Black, queer, and marginalized voices.",
+  "stats": [
+    { "number": "8+", "label": "Years Experience", "targetValue": 8, "prefix": "", "suffix": "+" },
+    { "number": "33+", "label": "Publications", "targetValue": 33, "prefix": "", "suffix": "+" },
+    { "number": "4+", "label": "Universities", "targetValue": 4, "prefix": "", "suffix": "+" },
+    { "number": "$1.2M+", "label": "Research Funding", "targetValue": 1.2, "prefix": "$", "suffix": "M+" }
+  ],
+  "features": [
+    {
+      "title": "Scholar",
+      "description": "Advancing criminological theory through innovative research and critical analysis."
+    },
+    {
+      "title": "Attorney",
+      "description": "Advocating for justice through legal expertise and policy reform."
+    },
+    {
+      "title": "Advocate",
+      "description": "Championing social and ecological justice for marginalized communities."
+    }
+  ],
+  "missionHeading": "My Mission",
+  "missionSubtext": "Bridging academic scholarship, legal advocacy, and social justice to create meaningful change",
+  "ctaHeading": "Collaborate on Justice-Centered Work",
+  "ctaSubtext": "Interested in research collaboration, speaking engagements, or consulting on justice initiatives?"
+}

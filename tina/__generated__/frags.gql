@@ -1,0 +1,131 @@
+fragment HomeParts on Home {
+  __typename
+  heroTitle
+  subtitle
+  description
+  stats {
+    __typename
+    number
+    label
+    targetValue
+    prefix
+    suffix
+  }
+  features {
+    __typename
+    title
+    description
+  }
+  missionHeading
+  missionSubtext
+  ctaHeading
+  ctaSubtext
+}
+
+fragment AboutParts on About {
+  __typename
+  heroTitle
+  heroBio1
+  heroBio2
+  personalValues {
+    __typename
+    title
+    description
+  }
+  keyAchievements {
+    __typename
+    year
+    title
+    description
+  }
+  journeyEarlyFoundations
+  journeyAcademicCalling
+  journeyTodaysMission
+  journeyQuote
+  journeyClosing
+}
+
+fragment CvParts on Cv {
+  __typename
+  googleDocViewUrl
+  googleDocPdfUrl
+  researchInterests
+  education {
+    __typename
+    degree
+    institution
+    year
+    location
+    details
+    committee
+    honors
+  }
+  currentPositions {
+    __typename
+    title
+    institution
+    period
+    location
+    type
+  }
+  keyAffiliations
+  recentAwards {
+    __typename
+    title
+    organization
+    year
+    description
+  }
+  majorGrants {
+    __typename
+    title
+    agency
+    amount
+    period
+    role
+  }
+  publicationHighlights {
+    __typename
+    title
+    journal
+    year
+    impact
+    coauthor
+  }
+  professionalOrgs
+}
+
+fragment ResearchParts on Research {
+  __typename
+  heroTitle
+  heroSubtext
+  researchAreas {
+    __typename
+    title
+    description
+    publications
+    color
+  }
+  currentProjects {
+    __typename
+    title
+    funding
+    amount
+    period
+    description
+    collaborators
+  }
+  methodologies
+  appliedProjects {
+    __typename
+    title
+    category
+    type
+    period
+    location
+    description
+    impact
+    color
+    outcomes
+  }
+}

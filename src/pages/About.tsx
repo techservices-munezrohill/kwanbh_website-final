@@ -1,13 +1,23 @@
 import React from 'react';
 import { Download, Award, Calendar, MapPin, Heart, Scale, BookOpen } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import aboutData from '../../content/about.json';
 
 const About = () => {
 
   // 1. Define the path to your image
   const profilePhotoPath = import.meta.env.BASE_URL + 'kwanbh-photo.jpg';
 
-  const keyAchievements = [
+  // Data loaded from content/about.json (edit via TinaCMS admin)
+  const keyAchievements = aboutData.keyAchievements;
+  const personalValues = aboutData.personalValues.map((v, i) => ({
+    icon: [<Heart className="h-8 w-8" />, <Scale className="h-8 w-8" />, <BookOpen className="h-8 w-8" />][i] || <Heart className="h-8 w-8" />,
+    title: v.title,
+    description: v.description,
+  }));
+
+  // REMOVED hardcoded arrays — data now lives in content/about.json
+  const _keyAchievements_removed = [
     {
       year: '2025',
       title: 'Ruth Shonle Cavan Young Scholar Award',
@@ -20,7 +30,7 @@ const About = () => {
     }
   ];
 
-  const personalValues = [
+  const _personalValues_removed = [
     {
       icon: <Heart className="h-8 w-8" />,
       title: 'Faith & Justice',
