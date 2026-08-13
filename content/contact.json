@@ -1,0 +1,23 @@
+{
+  "pageTitle": "Connect & Collaborate",
+  "pageSubtitle": "Interested in research collaboration, speaking engagements, consultation, or discussing justice-centered initiatives? I'd love to connect.",
+  "locations": ["Phoenix, Arizona, USA", "New York, New York, USA"],
+  "faqs": [
+    {
+      "question": "Q: What is your research methodology?",
+      "answer": "A: I employ rational-analytic, theory-driven, qualitative and quantitative/statistical methods, using data-focused, theory-focused, or applied approaches depending on my specific goal or assignment. I also have a wide network of collaborators and support staff who support my research including organizational management expertise, computational and technological expertise, and local knowledge in a number of countries."
+    },
+    {
+      "question": "Q: How can I collaborate on research?",
+      "answer": "A: I am always open to collaborations, and I am particularly interested in projects that bridge academic theory and frontline practice. Please reach out with your ideas and we can explore potential partnerships."
+    },
+    {
+      "question": "Q: Do you accept speaking engagements?",
+      "answer": "A: Yes, I regularly speak at conferences, universities, and community events on topics related to criminology, social justice, and advocacy. Please provide details about your event and timeline."
+    },
+    {
+      "question": "Q: Can you provide consultation services?",
+      "answer": "A: I provide strategic consultation for organizations and policymakers, especially work involving justice reform and inclusive structural design. I specialize in community engagement and public education strategies that move beyond standard, limited-touch outreach. Please let me know what expertise you need or what kind of relationship you want to explore."
+    }
+  ]
+}

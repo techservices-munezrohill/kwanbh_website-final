@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Website Blueprint: Dr. Kwan‑Lamar Blount‑Hill</title>
+    <style>
+        body { font-family: Calibri, Arial, sans-serif; margin: 1in; line-height: 1.5; }
+        h1 { color: #b45309; font-size: 18pt; border-bottom: 1pt solid #b45309; padding-bottom: 6pt; }
+        h2 { color: #92400e; font-size: 16pt; margin-top: 12pt; }
+        h3 { color: #78716c; font-size: 14pt; margin-top: 10pt; }
+        h4 { font-size: 12pt; font-weight: bold; margin-top: 8pt; }
+        p { margin: 6pt 0; }
+        ul, ol { margin: 6pt 0; padding-left: 20pt; }
+        li { margin-bottom: 3pt; }
+        .code { font-family: 'Courier New', monospace; background-color: #f5f5f5; padding: 10pt; white-space: pre; margin: 10pt 0; }
+        .bold { font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Website Blueprint: Dr. Kwan‑Lamar Blount‑Hill</h1>
+    
+    <h2>Overview</h2>
+    <p>This document serves as a comprehensive guide to the structure, components, and content of Dr. Kwan‑Lamar Blount‑Hill's professional website. Use this blueprint for maintenance, updates, and future development.</p>
+    
+    <h2>Site Structure</h2>
+    <p>The website follows a clean, academic-focused design with the following key pages:</p>
+    
+    <div class="code">Root
+├── Home (/)
+├── About (/about)
+├── CV (/cv)
+├── Research & Projects (/research)
+├── Publications (/publications)
+├── Service (/service)
+├── Teaching (/teaching) [Future Implementation]
+├── Blog (/blog) [Future Implementation]
+└── Contact (/contact)</div>
+    
+    <h2>Global Components</h2>
+    
+    <h3>Navbar</h3>
+    <ul>
+        <li><span class="bold">Location</span>: Top of every page, sticky</li>
+        <li><span class="bold">Elements</span>:
+            <ul>
+                <li>Logo (GraduationCap icon)</li>
+                <li>Site title: "Dr. Kwan‑Lamar Blount‑Hill"</li>
+                <li>Navigation links to all main pages</li>
+                <li>Mobile-responsive hamburger menu</li>
+            </ul>
+        </li>
+        <li><span class="bold">Styling</span>: White background with shadow, amber accent colors</li>
+        <li><span class="bold">Active Link Behavior</span>: Highlighted with amber color and underline</li>
+        <li><span class="bold">File</span>: src/components/Navbar.tsx</li>
+        <li><span class="bold">Implementation Notes</span>: Uses React Router's NavLink for active state management</li>
+    </ul>
+    
+    <h3>Footer</h3>
+    <ul>
+        <li><span class="bold">Location</span>: Bottom of every page</li>
+        <li><span class="bold">Elements</span>:
+            <ul>
+                <li>Contact information (Email: kbh@asu.edu)</li>
+                <li>Location information: "Brooklyn, NY"</li>
+                <li>Social media links:
+                    <ul>
+                        <li>LinkedIn: [Profile URL]</li>
+                        <li>Twitter/X: [Profile URL]</li>
+                        <li>Academia.edu: [Profile URL]</li>
+                        <li>ResearchGate: [Profile URL]</li>
+                    </ul>
+                </li>
+                <li>Copyright information: "© [Current Year] Dr. Kwan‑Lamar Blount‑Hill. All rights reserved."</li>
+            </ul>
+        </li>
+        <li><span class="bold">Styling</span>: Dark background with light text</li>
+        <li><span class="bold">File</span>: src/components/Footer.tsx</li>
+        <li><span class="bold">Implementation Notes</span>: Uses Lucide React icons for social media links</li>
+    </ul>
+    
+    <h2>Page Blueprints</h2>
+    
+    <h3>1. Home Page</h3>
+    <ul>
+        <li><span class="bold">URL</span>: /</li>
+        <li><span class="bold">Purpose</span>: Create a strong first impression and provide an overview</li>
+        <li><span class="bold">Key Components</span>:
+            <ul>
+                <li><span class="bold">Hero Section</span>:
+                    <ul>
+                        <li>Animated typing effect for name: "Dr. Kwan-Lamar Blount-Hill"</li>
+                        <li>Professional photo (Photo-6.jpg)</li>
+                        <li>Subtitle with staggered animation</li>
+                        <li>Brief introduction with fade-in effect</li>
+                    </ul>
+                </li>
+                <li><span class="bold">Professional Identities Section</span>:
+                    <ul>
+                        <li>Scholar: "Advancing criminological theory through innovative research and critical analysis"</li>
+                        <li>Attorney: "Advocating for justice through legal expertise and policy reform"</li>
+                        <li>Advocate: "Championing social and ecological justice for marginalized communities"</li>
+                    </ul>
+                </li>
+                <li><span class="bold">Statistics Section</span> (with animation):
+                    <ul>
+                        <li>8+ Years Experience</li>
+                        <li>33+ Publications</li>
+                        <li>4+ Universities</li>
+                        <li>$1.2M+ Research Funding</li>
+                    </ul>
+                </li>
+                <li><span class="bold">Featured Publications</span>:
+                    <ul>
+                        <li>Display of 2-3 recent publications with journal covers</li>
+                        <li>Links to <a href="/publications">Publications page</a></li>
+                    </ul>
+                </li>
+                <li><span class="bold">Call-to-Action Buttons</span>:
+                    <ul>
+                        <li>"View CV" → <a href="/cv">CV page</a></li>
+                        <li>"Contact Me" → <a href="/contact">Contact page</a></li>
+                        <li>"Explore Research" → <a href="/research">Research page</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><span class="bold">File</span>: src/pages/Home.tsx</li>
+        <li><span class="bold">Animation Notes</span>: Uses React useEffect for typing animation, intersection observer for scroll-based animations</li>
+    </ul>
+    
+    <h3>2. About Page</h3>
+    <ul>
+        <li><span class="bold">URL</span>: /about</li>
+        <li><span class="bold">Purpose</span>: Personal and professional background</li>
+        <li><span class="bold">Key Components</span>:
+            <ul>
+                <li><span class="bold">Hero Section</span>:
+                    <ul>
+                        <li>Heading: "About Dr. Kwan‑Lamar Blount‑Hill"</li>
+                        <li>Personal statement: "I am a Black, queer, Christian criminologist, attorney, and advocate dedicated to advancing justice through scholarship, teaching, and community engagement."</li>
+                        <li>Professional photo</li>
+                    </ul>
+                </li>
+                <li><span class="bold">Key Achievements Timeline</span>:
+                    <ul>
+                        <li>2025: Ruth Shonle Cavan Young Scholar Award (American Society of Criminology)</li>
+                        <li>2020: Doctoral Achievement in Criminal Justice</li>
+                    </ul>
+                </li>
+                <li><span class="bold">Personal Values Section</span>:
+                    <ul>
+                        <li>Faith & Justice: "My Christian faith calls me to work for justice and healing, seeing each person as made in the image of God with inherent dignity and worth."</li>
+                        <li>Lived Experience: "As a Black, queer person, I bring personal understanding of marginalization to my work, grounding scholarship in authentic experience."</li>
+                        <li>Liberation Through Learning: "I believe knowledge should serve freedom—both personal liberation and collective transformation of unjust systems."</li>
+                    </ul>
+                </li>
+                <li><span class="bold">Professional Biography</span>:
+                    <ul>
+                        <li>Detailed academic and professional journey</li>
+                        <li>Research philosophy and approach</li>
+                    </ul>
+                </li>
+                <li><span class="bold">Download CV Button</span></li>
+            </ul>
+        </li>
+        <li><span class="bold">File</span>: src/pages/About.tsx</li>
+        <li><span class="bold">Implementation Notes</span>: Uses Lucide React icons for visual elements</li>
+    </ul>
+    
+    <h3>3. CV Page</h3>
+    <ul>
+        <li><span class="bold">URL</span>: /cv</li>
+        <li><span class="bold">Purpose</span>: Detailed academic and professional history</li>
+        <li><span class="bold">Key Components</span>:
+            <ul>
+                <li><span class="bold">Education Section</span>:
+                    <ul>
+                        <li>Ph.D. in Criminal Justice, Graduate Center/John Jay College, CUNY</li>
+                        <li>J.D., University of Michigan Law School</li>
+                        <li>B.A. in Political Science, Yale University</li>
+                    </ul>
+                </li>
+                <li><span class="bold">Professional Experience</span>:
+                    <ul>
+                        <li>Current position: Assistant Professor, Arizona State University</li>
+                        <li>Previous academic positions</li>
+                        <li>Legal experience</li>
+                        <li>Research positions</li>
+                    </ul>
+                </li>
+                <li><span class="bold">Awards and Honors</span>:
+                    <ul>
+                        <li>Ruth Shonle Cavan Young Scholar Award</li>
+                        <li>Other academic and professional recognitions</li>
+                    </ul>
+                </li>
+                <li><span class="bold">Skills and Expertise</span>:
+                    <ul>
+                        <li>Research methodologies</li>
+                        <li>Legal specializations</li>
+                        <li>Teaching areas</li>
+                    </ul>
+                </li>
+                <li><span class="bold">Downloadable PDF Version</span></li>
+            </ul>
+        </li>
+        <li><span class="bold">File</span>: src/pages/CV.tsx</li>
+        <li><span class="bold">Implementation Notes</span>: Structured with clear section headings and consistent formatting</li>
+    </ul>
+    
+    <h3>4. Research & Projects Page</h3>
+    <ul>
+        <li><span class="bold">URL</span>: /research</li>
+        <li><span class="bold">Purpose</span>: Showcase research focus and ongoing projects</li>
+        <li><span class="bold">Key Components</span>:
+            <ul>
+                <li><span class="bold">Research Areas</span>:
+                    <ul>
+                        <li>Social Identity and Justice</li>
+                        <li>Environmental Criminology</li>
+                        <li>Procedural Justice</li>
+                        <li>Restorative Practices</li>
+                        <li>Critical Race Theory in Criminal Justice</li>
+                    </ul>
+                </li>
+                <li><span class="bold">Current Projects</span>:
+                    <ul>
+                        <li>Detailed descriptions of ongoing research</li>
+                        <li>Collaborators and institutions</li>
+                        <li>Funding sources</li>
+                        <li>Expected outcomes</li>
+                    </ul>
+                </li>
+                <li><span class="bold">Past Projects</span>:
+                    <ul>
+                        <li>Completed research initiatives</li>
+                        <li>Key findings and publications</li>
+                        <li>Impact and applications</li>
+                    </ul>
+                </li>
+                <li><span class="bold">Research Methodology</span>:
+                    <ul>
+                        <li>Approaches and frameworks</li>
+                        <li>Data collection methods</li>
+                        <li>Analysis techniques</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><span class="bold">File</span>: src/pages/Research.tsx</li>
+        <li><span class="bold">Implementation Notes</span>: Uses cards or sections for each research area/project</li>
+    </ul>
+    
+    <h3>5. Publications Page</h3>
+    <ul>
+        <li><span class="bold">URL</span>: /publications</li>
+        <li><span class="bold">Purpose</span>: List academic publications and scholarly work</li>
+        <li><span class="bold">Key Components</span>:
+            <ul>
+                <li><span class="bold">Filtering System</span>:
+                    <ul>
+                        <li>Filter by type: All, Journal Articles, Books, Book Chapters, Conference Papers</li>
+                        <li>Filter by year</li>
+                        <li>Filter by topic/research area</li>
+                    </ul>
+                </li>
+                <li><span class="bold">Featured Publications</span>:
+                    <ul>
+                        <li>"Social Identity Theory of Shared Narrative: Reimagining Community in Criminal Justice" (Criminal Justice and Behavior, 2024)</li>
+                        <li>"Affective Architecture: How Criminal Justice Spaces Shape Emotional Experience" (Biological Conservation, 2023)</li>
+                        <li>"Decolonizing Criminology: Toward Liberation and Healing" (University of California Press)</li>
+                    </ul>
+                </li>
+                <li><span class="bold">Journal Articles Section</span>:
+                    <ul>
+                        <li>Complete list with:
+                            <ul>
+                                <li>Title</li>
+                                <li>Authors</li>
+                                <li>Journal name</li>
+                                <li>Year, volume, issue, pages</li>
+                                <li>Abstract</li>
+                                <li>DOI link</li>
+                                <li>PDF link when available</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><span class="bold">Books and Book Chapters Section</span>:
+                    <ul>
+                        <li>Title</li>
+                        <li>Authors/Editors</li>
+                        <li>Publisher</li>
+                        <li>Year</li>
+                        <li>Abstract/Description</li>
+                    </ul>
+                </li>
+                <li><span class="bold">Conference Papers and Presentations</span></li>
+                <li><span class="bold">Other Scholarly Works</span></li>
+            </ul>
+        </li>
+        <li><span class="bold">File</span>: src/pages/Publications.tsx</li>
+        <li><span class="bold">Implementation Notes</span>: Uses journal cover images for featured publications, includes filtering functionality</li>
+    </ul>
+    
+    <h3>6. Service Page</h3>
+    <ul>
+        <li><span class="bold">URL</span>: /service</li>
+        <li><span class="bold">Purpose</span>: Highlight professional service and community involvement</li>
+        <li><span class="bold">Key Components</span>:
+            <ul>
+                <li><span class="bold">Academic Service</span>:
+                    <ul>
+                        <li>Journal reviewer roles</li>
+                        <li>Conference organization</li>
+                        <li>Committee memberships</li>
+                    </ul>
+                </li>
+                <li><span class="bold">Professional Memberships</span>:
+                    <ul>
+                        <li>American Society of Criminology</li>
+                        <li>American Bar Association</li>
+                        <li>Other relevant organizations</li>
+                    </ul>
+                </li>
+                <li><span class="bold">Community Engagement</span>:
+                    <ul>
+                        <li>Volunteer work</li>
+                        <li>Advocacy initiatives</li>
+                        <li>Public speaking engagements</li>
+                    </ul>
+                </li>
+                <li><span class="bold">Consulting Work</span>:
+                    <ul>
+                        <li>Policy consulting</li>
+                        <li>Expert testimony</li>
+                        <li>Legal consulting</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><span class="bold">File</span>: src/pages/Service.tsx</li>
+        <li><span class="bold">Implementation Notes</span>: Organized by service type with clear headings</li>
+    </ul>
+    
+    <h3>7. Contact Page</h3>
+    <ul>
+        <li><span class="bold">URL</span>: /contact</li>
+        <li><span class="bold">Purpose</span>: Provide ways to get in touch</li>
+        <li><span class="bold">Key Components</span>:
+            <ul>
+                <li><span class="bold">Contact Form</span>:
+                    <ul>
+                        <li>Name field</li>
+                        <li>Email field</li>
+                        <li>Subject field</li>
+                        <li>Message field</li>
+                        <li>Submit button</li>
+                    </ul>
+                </li>
+                <li><span class="bold">Direct Contact Information</span>:
+                    <ul>
+                        <li>Email: kbh@asu.edu</li>
+                        <li>Office location</li>
+                        <li>Office hours</li>
+                    </ul>
+                </li>
+                <li><span class="bold">Social Media Links</span>:
+                    <ul>
+                        <li>LinkedIn</li>
+                        <li>Twitter/X</li>
+                        <li>Academia.edu</li>
+                        <li>ResearchGate</li>
+                    </ul>
+                </li>
+                <li><span class="bold">Map</span>: Location map (optional)</li>
+            </ul>
+        </li>
+        <li><span class="bold">File</span>: src/pages/Contact.tsx</li>
+        <li><span class="bold">Implementation Notes</span>: Form validation, email service integration</li>
+    </ul>
+    
+    <h2>Technical Architecture</h2>
+    
+    <h3>Frontend Framework</h3>
+    <ul>
+        <li>React 18.2.0 with TypeScript</li>
+        <li>React Router 6.x for navigation</li>
+        <li>Tailwind CSS 3.x for styling</li>
+        <li>Vite as build tool</li>
+    </ul>
+    
+    <h3>Key Files</h3>
+    <ul>
+        <li>src/App.tsx: Main application with routing</li>
+        <li>src/main.tsx: Application entry point</li>
+        <li>src/index.css: Global styles</li>
+        <li>src/components/: Reusable UI components</li>
+        <li>src/pages/: Page components</li>
+        <li>src/utils/: Utility functions (emailService.ts, googleDocs.ts)</li>
+        <li>src/assets/: Images and static assets</li>
+    </ul>
+    
+    <h3>Styling Guidelines</h3>
+    <ul>
+        <li><span class="bold">Color Palette</span>:
+            <ul>
+                <li>Primary: Amber (#b45309, #92400e)</li>
+                <li>Text: Stone (#1c1917, #78716c)</li>
+                <li>Background: Stone (#fafaf9)</li>
+                <li>Accents: White (#ffffff)</li>
+            </ul>
+        </li>
+        <li><span class="bold">Typography</span>:
+            <ul>
+                <li>Headings: Sans-serif, bold, text-4xl to text-5xl</li>
+                <li>Subheadings: Sans-serif, semibold, text-2xl to text-3xl</li>
+                <li>Body: Sans-serif, regular, text-base to text-lg</li>
+            </ul>
+        </li>
+        <li><span class="bold">Components</span>:
+            <ul>
+                <li>Buttons: Rounded corners, amber background</li>
+                <li>Cards: White background, subtle shadows</li>
+                <li>Sections: Consistent padding (py-12 to py-20)</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h3>Animation and Interaction</h3>
+    <ul>
+        <li>Typing effect on Home page</li>
+        <li>Scroll-triggered animations</li>
+        <li>Hover effects on buttons and links</li>
+        <li>Smooth page transitions</li>
+    </ul>
+    
+    <h2>Content Management</h2>
+    <ul>
+        <li><span class="bold">Publication Updates</span>: Add new publications to src/pages/Publications.tsx</li>
+        <li><span class="bold">CV Updates</span>: Modify src/pages/CV.tsx</li>
+        <li><span class="bold">Research Projects</span>: Update src/pages/Research.tsx</li>
+        <li><span class="bold">Image Assets</span>: Add to src/assets/</li>
+    </ul>
+    
+    <h2>Maintenance Guidelines</h2>
+    
+    <h3>Regular Updates</h3>
+    <ul>
+        <li>Keep publications list current with new articles and books</li>
+        <li>Update CV as new positions, awards, or qualifications are acquired</li>
+        <li>Refresh research projects with new initiatives and completed work</li>
+        <li>Update statistics on Home page to reflect current numbers</li>
+        <li>Check and update all links to ensure they remain functional</li>
+        <li>Review and update content at least quarterly</li>
+    </ul>
+    
+    <h3>Technical Maintenance</h3>
+    <ul>
+        <li>Keep dependencies updated through regular npm updates</li>
+        <li>Test across browsers (Chrome, Firefox, Safari, Edge) and devices (desktop, tablet, mobile)</li>
+        <li>Optimize images for web to maintain performance</li>
+        <li>Monitor site performance and make adjustments as needed</li>
+        <li>Implement security updates promptly</li>
+        <li>Maintain backups of the codebase</li>
+    </ul>
+    
+    <h2>Development Workflow</h2>
+    <ol>
+        <li><span class="bold">Local Development</span>:
+            <ul>
+                <li>Install dependencies: npm install</li>
+                <li>Start development server: npm run dev</li>
+                <li>Access at http://localhost:5173/</li>
+            </ul>
+        </li>
+        <li><span class="bold">Code Quality</span>:
+            <ul>
+                <li>Run linting: npm run lint</li>
+                <li>Fix linting issues: npm run lint:fix</li>
+            </ul>
+        </li>
+        <li><span class="bold">Building</span>:
+            <ul>
+                <li>Create production build: npm run build</li>
+                <li>Preview production build: npm run preview</li>
+            </ul>
+        </li>
+        <li><span class="bold">Deployment</span>:
+            <ul>
+                <li>Prepare for deployment: npm run predeploy</li>
+                <li>Deploy to hosting: npm run deploy</li>
+            </ul>
+        </li>
+    </ol>
+    
+    <h2>Future Enhancements</h2>
+    <ul>
+        <li><span class="bold">Content</span>:
+            <ul>
+                <li>Teaching page with courses, syllabi, and teaching philosophy</li>
+                <li>Blog functionality for regular updates and thought pieces</li>
+                <li>Media gallery for interviews, talks, and presentations</li>
+                <li>Downloadable resources for students and researchers</li>
+            </ul>
+        </li>
+        <li><span class="bold">Technical</span>:
+            <ul>
+                <li>Dark mode toggle</li>
+                <li>Search functionality across all content</li>
+                <li>Analytics integration</li>
+                <li>Improved accessibility features</li>
+            </ul>
+        </li>
+        <li><span class="bold">User Experience</span>:
+            <ul>
+                <li>Language options for international visitors</li>
+                <li>Print-friendly views for CV and publications</li>
+                <li>Citation export functionality for publications</li>
+                <li>Newsletter subscription option</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <p>This blueprint serves as a living document. Update it as the website evolves to ensure it remains an accurate reference for all development and maintenance activities.</p>
+</body>
+</html>

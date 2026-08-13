@@ -1,0 +1,55 @@
+{
+  "heroTitle": "Dr. Kwan-Lamar Blount-Hill",
+  "subtitle": "Scholar. Reformer. Developer. Advocate.",
+  "description": "Justice scholar, professor, researcher, and advocate for social, economic, and ecological justice. Advancing transformative scholarship that centers fairness, equity, and empowers the vulnerable.",
+  "ctaHeading": "Collaborate on Justice-Centered Work",
+  "ctaSubtext": "Interested in research collaboration, scheduling speaking engagements, or working with Kwan on community empowerment or justice initiatives?",
+  "stats": [
+    {
+      "number": "716+",
+      "label": "Google Scholar citations",
+      "targetValue": 716,
+      "prefix": "",
+      "suffix": "+"
+    },
+    {
+      "number": "$1.2M+",
+      "label": "Research Funding",
+      "targetValue": 1.2,
+      "prefix": "$",
+      "suffix": "M+"
+    }
+  ],
+  "heroImage": "/uploads/kwanbh-photo.jpg",
+  "recentWork": [
+    {
+      "title": "Feminist Criminology",
+      "type": "Publication",
+      "year": 2026,
+      "description": "“Engagement is not an option”: The essential role of community-engaged research for implementation science in community violence studies and beyond.",
+      "link": "https://journals.sagepub.com/doi/pdf/10.1177/15570851261444683",
+      "image": "/uploads/feminist-criminology.png"
+    },
+    {
+      "title": "American Journal of Criminal Justice",
+      "type": "Publication",
+      "year": 2025,
+      "description": "“To obey or not obey”: Disadvantaged social group identity and criminal justice involved interviewees’ perceptions of an obligation to obey the police.",
+      "link": "https://link.springer.com/article/10.1007/s12103-025-09812-z",
+      "image": "/uploads/american-journal-criminal-justice.jpg"
+    },
+    {
+      "title": "Community-Based Violence Intervention and Social Justice: An Exploration of Benefits Beyond Violence Reduction",
+      "type": "Publication",
+      "year": 2024,
+      "description": "“Community-based violence intervention and social justice”: An exploration of benefits beyond violence reduction.",
+      "link": "https://journals.sagepub.com/doi/10.1177/00027162251348299",
+      "image": "/uploads/anna_714_1.cover.png"
+    }
+  ],
+  "mission": [
+    "I apply scientific and intellectual rigor to address societal harms by supporting, strengthening, and empowering individuals, organizations, and communities. My scientific practice is rooted in an inclusive epistemology and a belief that diverse ways of knowing are essential, and an interdisciplinary methodology that ensures my research is as multifaceted as the problems I seek to solve.",
+    "To achieve this, I combine formal training with the transformative power of collaboration, collective action, and community connection.",
+    "My life and work are premised on the idea that the universe is connected, that balance between the individual and the collective is essential for wellbeing, and that our universal collective is only as strong as its most vulnerable point. In this framework, 'love' is more than a charitable feeling; rather, when broad and inclusive, it is the critical mechanism for motivating the aggregate acts that enhance wellbeing for everyone and everything. While informed by my spirituality, my Black American community, my African heritage, and my Christian upbringing, these beliefs animate a universal mission: to serve and empower all who are vulnerable to harm, across every identity and community that life allows me to reach."
+  ]
+}

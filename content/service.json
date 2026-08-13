@@ -1,0 +1,58 @@
+{
+  "pageTitle": "PROFESSIONAL ACTIVITIES",
+  "pageSubtitle": "Commitment to advancing justice and community well-being through research, human and economic capital development, technical and performance assistance, and volunteer and charitable service.",
+  "sections": [
+    {
+      "title": "Philanthropy",
+      "items": [
+        {
+          "title": "RJIC Fellowship",
+          "description": "Co-founded a US$2,500 per year fellowship to support PhD students engaged in inclusive criminology."
+        },
+        {
+          "title": "Out Loud & United",
+          "description": "Co-Founder, an organization promoting economic empowerment for Rwandan queer and LGBTQIAA+ communities, especially those seeking refuge from persecution in other countries."
+        }
+      ]
+    },
+    {
+      "title": "Partnerships and Collaborations",
+      "items": [
+        {
+          "title": "Community Violence Prevention Project",
+          "description": "Co-led by Jason Szkola, a collaboration of scholars engaged in research and technical support for communities working to reduce persistent violence."
+        }
+      ]
+    },
+    {
+      "title": "Community Service",
+      "items": [
+        {
+          "title": "Foundation of Freedom",
+          "description": "Research Director, an organization focused on expanding economic freedom and opportunity for Black communities."
+        },
+        {
+          "title": "Ineza Iganze",
+          "description": "Chair, an organization based in Rwanda, dedicated to expanding education, economic opportunity, and self-determination for young people in Rwanda."
+        }
+      ]
+    },
+    {
+      "title": "Expert and Professional Partners",
+      "items": [
+        {
+          "title": "BBH3 Consulting",
+          "description": ""
+        },
+        {
+          "title": "Munezero Hill Consulting",
+          "description": ""
+        },
+        {
+          "title": "ZealUSTech Consulting",
+          "description": ""
+        }
+      ]
+    }
+  ]
+}

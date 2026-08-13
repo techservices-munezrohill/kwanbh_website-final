@@ -1,0 +1,40 @@
+{
+  "heroTitle": "About Dr. Kwan‑Lamar Blount‑Hill",
+  "heroBio1": "Who we are is defined by the story we tell about ourselves: where we are, where we’ve been, where we’re going. My story is one of bridging worlds between the front lines of public safety and the high-level corridors of policy and law.\n\nMy research examines the architecture of power. I seek to understand how we justify authority, how our relationship with nature shapes our exercise of power, and how systems of justice can either marginalize or empower. To do so, I apply an inclusive, collaborative, and interdisciplinary lens across criminal justice, public administration, and social and environmental psychology.",
+  "heroBio2": "Currently, I am an assistant professor at the School of Criminology and Criminal Justice at Arizona State University. Before that, I served as senior research manager for New York City’s Mayor’s Office of Criminal Justice and then Director of Research and Data for the Kings County District Attorney’s Office. My work as a policy researcher and, now, as a professor is informed by my \"boots-on-the-ground\" experience as a police officer and firefighter, and grounded in my education in criminal justice, environmental science and the law.\n\nOriginally from New Brunswick, New Jersey, I am a product of the Davis/Blount and Lane/Hill families and, later, Dayton Public Schools, Tuskegee University, and the brotherhood of Iota Phi Theta. I am proud of my faith, of my Black and queer identities, and of my various communities, all of which converge to form a strong commitment to social and ecological justice, universal safety and security, and equal and unlimited opportunity for all of us, borne of an ethic of love and of duty to one another. At present, I live in Manhattan, New York, and Phoenix, Arizona, with a network of love and support that spans the globe, for which I am ever grateful.",
+  "profileImage": "/uploads/kwanbh-photo.jpg",
+  "personalValues": [
+    {
+      "title": "Faith & Justice",
+      "description": "My Christian faith calls me to work for justice and healing, seeing each person as made in the image of God with inherent dignity and worth."
+    },
+    {
+      "title": "Lived Experience",
+      "description": "As a Black, queer person, I bring personal understanding of marginalization to my work, grounding scholarship in authentic experience."
+    },
+    {
+      "title": "Liberation Through Learning",
+      "description": "I believe knowledge should serve freedom—both personal liberation and collective transformation of unjust systems."
+    }
+  ],
+  "keyAchievements": [
+    {
+      "year": "2026",
+      "title": "Academy New Scholar Award",
+      "description": "Awarded by the Academy of Criminal Justice Sciences for outstanding early‑career scholarly achievement.",
+      "link": "https://www.acjs.org/2026-award-grant-winners/"
+    },
+    {
+      "year": "2026",
+      "title": "W.E.B. Du Bois Award",
+      "description": "Recognized by the Western Society of Criminology for contributions to scholarship and justice.",
+      "link": "https://westerncriminology.org/awards/the-w-e-b-dubois-award/"
+    },
+    {
+      "year": "2025",
+      "title": "Ruth Shonle Cavan Young Scholar Award",
+      "description": "American Society of Criminology's award for outstanding early career contributions to criminological theory and research.",
+      "link": "https://asc41.org/about-asc/awards/"
+    }
+  ]
+}
